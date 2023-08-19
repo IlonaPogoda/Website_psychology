@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Личный кабинет</title>
+{% endblock %}
+
+{% block right_header %}
+<p class="navbar-brand">🧐 {{user_name}}</p>
+<form class="d-flex" role="search">
+  <a class="btn btn-lg btn-primary" href="/signout">Выйти</a>
+</form>
+{% endblock %}
+
+{% block body %}
+<style>
+   .text {
+    text-align:  center;
+   }
+
+   text-shadow: 1px 1px 2px black;
+
+  </style>
+<div class = "text" >
+  <h1>Ваши записи</h1>
+</div>
+
+{% for t in notes_list %}
+<hr class="featurette-divider">
+<div class="container marketing" style="background-color:#dee0de;">
+  <h2 class="fw-normal">👨‍⚕️{{t['doctor_fio']}}</h2>
+  <h3>{{t['reason']}}</h3>
+  <h3>{{t['date']}}</h3>
+</div>
+<br>
+<hr class="featurette-divider">
+<br>
+
+{% endfor %}
+{% endblock %}
+
+
+

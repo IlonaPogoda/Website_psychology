@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Запись</title>
+{% endblock %}
+
+{% block body %}
+<style>
+   .text {
+    text-align:  center;
+   }
+
+    .donate-now {
+      list-style-type: none;
+      margin: 25px 0 0 0;
+      padding: 0;
+    }
+
+    .donate-now li {
+      float: left;
+      margin: 0 5px 0 0;
+      width: 100px;
+      height: 40px;
+      position: relative;
+    }
+
+    .donate-now label,
+    .donate-now input {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .donate-now input[type="radio"] {
+      opacity: 0.01;
+      z-index: 100;
+    }
+
+    .donate-now input[type="radio"]:checked+label,
+    .Checked+label {
+      background: #c874ed;
+    }
+
+    .donate-now label {
+      padding: 5px;
+      border: 1px solid #CCC;
+      cursor: pointer;
+      z-index: 90;
+    }
+
+    .donate-now label:hover {
+      background: #DDD;
+    }
+  </style>
+<div class = "text">
+  <h1>Заполните все пункты</h1>
+</div>
+<div class="container marketing">
+    <form action="/noteprocess" id="note_form" method="POST">
+        <hr class="featurette-divider">
+        <h2 class="fw-normal">Какую классификацию психотерапии вы предпочитаете</h2>
+           <p>
+               <select name="type" size="3">
+                   <option value="Гештальт">Гештальт</option>
+                   <option value="Клиническая">Клиническая</option>
+                   <option value="Арт-психотерапия">Арт-психотерапия</option>
+               </select>
+           </p>
+
+         <hr class="featurette-divider">
+        <h2 class="fw-normal">Выберите предпочитаемый пол врача</h2>
+            <p>
+                <select name="gender">
+                    <optgroup label="Пол врача">
+                        <option value="Жен">Женский</option>
+                        <option value="Муж">Мужской</option>
+                    </optgroup>
+                </select>
+            </p>
+
+        <hr class="featurette-divider">
+        <h2 class="fw-normal">Выберите пункты беспокоющие вас</h2>
+        <input type="checkbox" id="vehicle1" name="p1" value="Bike">
+        <label for="vehicle1"> Повышенная тревожность</label><br>
+        <input type="checkbox" id="vehicle2" name="p2" value="Car">
+        <label for="vehicle2"> Фобии</label><br>
+        <input type="checkbox" id="vehicle3" name="p3" value="Raz">
+        <label for="vehicle3"> Раздражительность</label><br>
+        <input type="checkbox" id="vehicle4" name="p4" value="Agr">
+        <label for="vehicle4"> Агрессия без причины</label><br>
+        <input type="checkbox" id="vehicle5" name="p5" value="Ned">
+        <label for="vehicle5"> Частое недомогание, чуство пустоты и усталости</label><br>
+        <input type="checkbox" id="vehicle6" name="p6" value="Soc">
+        <label for="vehicle6"> Проблемы в социальной среде</label><br>
+        <input type="checkbox" id="vehicle7" name="p7" value="Fam">
+        <label for="vehicle7"> Проблемы в семье</label><br>
+
+        <hr class="featurette-divider">
+
+        <h2 class="fw-normal">Выберите удобные для вас дату и время</h2>
+
+        <input type="date" name="date">
+
+        <select name="time">
+            {% for t in time_list %}
+            <option value="{{t}}">{{t}}</option>
+            {% endfor %}
+        </select>
+        <!--
+        <ul class="donate-now">
+            {% for t in time_list %}
+            <li>
+                <input type="radio" id="{{t}}" name="time" value="{{t}}">
+                <label for="{{t}}">{{t}}</label>
+            </li>
+            {% endfor %}
+        </ul>
+        -->
+        <hr class="featurette-divider">
+        <input type="submit" value="Submit">
+        <br>
+        <br>
+    </form>
+</div>
+{% endblock %}

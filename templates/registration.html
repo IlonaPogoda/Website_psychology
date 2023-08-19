@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block body %}
+<style>
+    .text {
+    text-align:  center;
+   }
+</style>
+
+<div class = "text">
+  <h2>Зарегестрируйтесь, чтобы записаться на прием</h2>
+</div>
+
+<br>
+<br>
+
+<div class="flex">
+<div style="margin-left: 100px;">
+    <form action="/" id="register_form" method="POST">
+        <table>
+
+            <tr>
+                <td>
+                     <label for="first_name">Name:</label>
+                </td>
+                <td>
+                    <input id="first_name" type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="last_name">Surname:</label>
+                </td>
+                <td>
+                     <input id="last_name" type="text" name="surname">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                     <input id="email" type="email" name="email">
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="password">Password:</label>
+                </td>
+                <td>
+                     <input id="password" type="password" name="password">
+                </td>
+            </tr>
+
+       </table><br>
+
+
+
+        <input type="submit" value="Save">
+
+    </form>
+</div>
+    <div class="row featurette">
+      <div class="col-md-7">
+      </div>
+    <div class="col-md-5">
+<img src="static\img\6502969.jpg" alt="" align=”right”
+     width="450"
+     height="400">
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Sign in</title>
+{% endblock %}
+
+{% block body %}
+<style>
+    .text {
+    text-align:  center;
+   }
+</style>
+
+<div class = "text">
+  <h2>Войдите или зарегестрируйтесь, чтобы записаться на прием</h2>
+</div>
+
+<hr class="featurette-divider">
+<br>
+<br>
+<div style="margin-left: 100px;">
+    <form action="/join" id="Signin_form" method="POST">
+        <table>
+
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                     <input id="email" type="email" name="email">
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="password">Password:</label>
+                </td>
+                <td>
+                     <input id="password" type="password" name="password">
+                </td>
+            </tr>
+       </table><br>
+
+
+
+        <input type="submit" value="Войти">
+        <a href="/register">
+            Зарегестрироватться
+        </a>
+    </form>
+
+</div>
+<br>
+<br>
+<hr class="featurette-divider">
+<div class = "text">
+    <img src = "static\img\12.jpg"
+    width="550"
+     height="400"/>
+</div>
+{% endblock %}
